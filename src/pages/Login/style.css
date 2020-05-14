@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../../assets/fonts/Pokemon_Solid.ttf') format('truetype');
+    /* src: url('../../assets/fonts/Pokemon_Hollow.ttf') format('truetype'), */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.form-login-container {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.form-login-container .bgImage {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 104%;
+    height: 104%;
+    z-index: 1;
+    background-image: url('https://s2.glbimg.com/mdN484ewgPR3VWDeqqdWyfzYXoY=/e.glbimg.com/og/ed/f/original/2015/12/08/5590077419_1ca729c953_b.jpg');
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+.form-login-container .bgImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #00000091;
+}
+
+
+.form-login-content {
+    margin: 20px auto;
+    width: 519px;
+    box-shadow: 0 0 3px 1px #0000002e;
+    padding: 28px 0 58px;
+    border-radius: 6px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.form-login-content h1 {
+    margin: 0 auto 46px;
+    font-family: 'Pokemon';
+    color: #f00;
+    font-size: 65px;
+    text-align: center;
+    text-shadow: 5px 2px #000;
+}
+
+.form-login-content form {
+    width:60%;
+    margin: 24px auto 0;
+    text-align: center;
+}
+
+.form-login-content form .inputField {
+    margin-bottom: 20px;
+}
+
+.form-login-content form button {
+    padding: 8px 46px;
+}
+
+.loading-login {
+    z-index: 3 !important;
+    color: #fff;
+}

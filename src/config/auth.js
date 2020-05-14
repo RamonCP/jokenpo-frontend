@@ -5,15 +5,18 @@ export const isAuthenticated = () => {
     if (token) {
 
         const decodedToken = jwt.decode(token, {complete: true});
-        
-        const dateNow = new Date()
-        console.log(decodedToken, decodedToken.payload.exp, dateNow.getTime())
+        const timestampNow = Math.floor(Date.now() / 1000)
 
-        // if (decodedToken.payload.exp < dateNow.getTime()) {
-        //     console.log("Foi expirado")
-        // } else {
-        //     console.log("Válido")
-        // }
+        // console.log(decodedToken.payload.exp, timestampNow)
+
+        if (decodedToken.payload.exp < timestampNow) {
+            console.log("Sessão expirada")
+            localStorage.removeItem('token')
+            return false
+        } else {
+            console.log("Válido")
+            return true
+        }
 
 
         return true
