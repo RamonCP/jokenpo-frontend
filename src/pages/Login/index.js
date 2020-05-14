@@ -29,11 +29,11 @@ export default class Login extends Component {
         e.preventDefault()
         try {
             const response = await api.post('/jokenpo/login',this.state)
-            const token = response.headers.authorization
+            const token = response.headers.authorization.replace('Bearer ','')
             
             if (token) {
                 localStorage.setItem('token', token)
-                return <Redirect to={{ pathname: "/app" }} />
+                this.forceUpdate()
             }
             
             console.log(response)
